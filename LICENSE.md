@@ -130,7 +130,7 @@ const msg=`طلب جديد - KING
 العنوان: ${address.value}
 الدفع: عند الاستلام`;
 
-window.open("https://wa.me/212600000000?text="+encodeURIComponent(msg));
+window.open("https://wa.me/212677669487?text="+encodeURIComponent(msg));
 }
 
 /* عداد الزوار */

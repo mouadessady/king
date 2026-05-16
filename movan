@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPOR MOVAN</title>  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Cairo',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#000;
+      color:#fff;
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#000000dd;
+      backdrop-filter:blur(10px);
+      z-index:1000;
+      border-bottom:1px solid #222;
+    }
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:900;
+      color:#00ff88;
+      letter-spacing:3px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#00ff88;
+    }
+
+    .hero{
+      height:100vh;
+      background:url('https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1600&auto=format&fit=crop') center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:#000000b5;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      width:90%;
+    }
+
+    .hero h1{
+      font-size:70px;
+      margin-bottom:20px;
+      font-weight:900;
+    }
+
+    .hero h1 span{
+      color:#00ff88;
+    }
+
+    .hero p{
+      font-size:22px;
+      color:#ddd;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#00ff88;
+      color:#000;
+      padding:15px 35px;
+      border-radius:40px;
+      text-decoration:none;
+      font-size:20px;
+      font-weight:700;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:50px;
+      color:#00ff88;
+      margin-bottom:10px;
+    }
+
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .product-card{
+      background:#111;
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.4s;
+      border:1px solid #222;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .product-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .product-card img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+    }
+
+    .product-content{
+      padding:25px;
+    }
+
+    .product-content h3{
+      font-size:28px;
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#00ff88;
+      font-size:30px;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+
+    .details{
+      margin-bottom:20px;
+      background:#000;
+      padding:15px;
+      border-radius:15px;
+      border:1px solid #222;
+    }
+
+    .details p{
+      margin-bottom:10px;
+      color:#ddd;
+      line-height:1.8;
+    }
+
+    .colors,
+    .sizes{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:15px 0;
+    }
+
+    .tag{
+      background:#00ff88;
+      color:#000;
+      padding:7px 14px;
+      border-radius:30px;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .order-form{
+      margin-top:20px;
+    }
+
+    .order-form input,
+    .order-form select,
+    .order-form textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border:none;
+      border-radius:12px;
+      background:#1b1b1b;
+      color:#fff;
+      font-size:16px;
+    }
+
+    .order-form button{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:14px;
+      background:#00ff88;
+      color:#000;
+      font-size:20px;
+      font-weight:800;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .order-form button:hover{
+      transform:scale(1.03);
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid #222;
+      color:#999;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:42px;
+      }
+
+      nav ul{
+        display:none;
+      }
+    }
+  </style></head>
+<body><header>
+  <div class="container">
+    <nav>
+      <div class="logo">SPOR MOVAN</div><ul>
+    <li><a href="#home">الرئيسية</a></li>
+    <li><a href="#products">المنتجات</a></li>
+    <li><a href="#about">حول المتجر</a></li>
+  </ul>
+</nav>
+
+  </div>
+</header><section class="hero" id="home">
+  <div class="hero-content">
+    <h1>ملابس رياضية <span>احترافية</span></h1>
+    <p>أحدث الملابس والأحذية الرياضية العصرية بجودة عالية وأناقة فريدة</p>
+    <a href="#products" class="btn">تسوق الآن</a>
+  </div>
+</section><section id="products">
+  <div class="container"><div class="section-title">
+  <h2>منتجاتنا</h2>
+  <p>أفضل الملابس الرياضية الحديثة</p>
+</div>
+
+<div class="products">
+
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="product-content">
+      <h3>طقم رياضي احترافي</h3>
+      <div class="price">299 DH</div>
+
+      <div class="details">
+        <p>✔ خامة ممتازة ومريحة</p>
+        <p>✔ مناسب للرياضة والخروج</p>
+        <p>✔ جودة عالية وتوصيل سريع</p>
+      </div>
+
+      <strong>الألوان:</strong>
+      <div class="colors">
+        <span class="tag">أسود</span>
+        <span class="tag">أبيض</span>
+        <span class="tag">أحمر</span>
+      </div>
+
+      <strong>المقاسات:</strong>
+      <div class="sizes">
+        <span class="tag">S</span>
+        <span class="tag">M</span>
+        <span class="tag">L</span>
+        <span class="tag">XL</span>
+      </div>
+
+      <form class="order-form" onsubmit="sendWhatsApp(event,'طقم رياضي احترافي')">
+        <input type="text" id="name1" placeholder="الاسم الكامل" required>
+        <input type="tel" id="phone1" placeholder="رقم الهاتف" required>
+        <textarea id="address1" placeholder="العنوان الكامل" required></textarea>
+
+        <select id="color1" required>
+          <option value="">اختر اللون</option>
+          <option>أسود</option>
+          <option>أبيض</option>
+          <option>أحمر</option>
+        </select>
+
+        <select id="size1" required>
+          <option value="">اختر المقاس</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <button type="submit">اطلب عبر واتساب</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="product-content">
+      <h3>حذاء رياضي عصري</h3>
+      <div class="price">499 DH</div>
+
+      <div class="details">
+        <p>✔ تصميم عصري أنيق</p>
+        <p>✔ مريح للمشي والرياضة</p>
+        <p>✔ خامات قوية وعالية الجودة</p>
+      </div>
+
+      <strong>الألوان:</strong>
+      <div class="colors">
+        <span class="tag">أسود</span>
+        <span class="tag">أبيض</span>
+      </div>
+
+      <strong>المقاسات:</strong>
+      <div class="sizes">
+        <span class="tag">40</span>
+        <span class="tag">41</span>
+        <span class="tag">42</span>
+        <span class="tag">43</span>
+      </div>
+
+      <form class="order-form" onsubmit="sendWhatsApp(event,'حذاء رياضي عصري')">
+        <input type="text" id="name2" placeholder="الاسم الكامل" required>
+        <input type="tel" id="phone2" placeholder="رقم الهاتف" required>
+        <textarea id="address2" placeholder="العنوان الكامل" required></textarea>
+
+        <select id="color2" required>
+          <option value="">اختر اللون</option>
+          <option>أسود</option>
+          <option>أبيض</option>
+        </select>
+
+        <select id="size2" required>
+          <option value="">اختر المقاس</option>
+          <option>40</option>
+          <option>41</option>
+          <option>42</option>
+          <option>43</option>
+        </select>
+
+        <button type="submit">اطلب عبر واتساب</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+
+    <div class="product-content">
+      <h3>هودي رياضي فاخر</h3>
+      <div class="price">350 DH</div>
+
+      <div class="details">
+        <p>✔ قماش فاخر وناعم</p>
+        <p>✔ تصميم شبابي عصري</p>
+        <p>✔ مناسب لفصل الشتاء</p>
+      </div>
+
+      <strong>الألوان:</strong>
+      <div class="colors">
+        <span class="tag">أسود</span>
+        <span class="tag">رمادي</span>
+      </div>
+
+      <strong>المقاسات:</strong>
+      <div class="sizes">
+        <span class="tag">M</span>
+        <span class="tag">L</span>
+        <span class="tag">XL</span>
+      </div>
+
+      <form class="order-form" onsubmit="sendWhatsApp(event,'هودي رياضي فاخر')">
+        <input type="text" id="name3" placeholder="الاسم الكامل" required>
+        <input type="tel" id="phone3" placeholder="رقم الهاتف" required>
+        <textarea id="address3" placeholder="العنوان الكامل" required></textarea>
+
+        <select id="color3" required>
+          <option value="">اختر اللون</option>
+          <option>أسود</option>
+          <option>رمادي</option>
+        </select>
+
+        <select id="size3" required>
+          <option value="">اختر المقاس</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <button type="submit">اطلب عبر واتساب</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section><section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>حول SPOR MOVAN</h2>
+      <p>
+        متجر احترافي متخصص في الملابس الرياضية العصرية بجودة عالية وأسعار مناسبة.
+      </p>
+    </div>
+  </div>
+</section><footer>
+  © 2026 SPOR MOVAN - جميع الحقوق محفوظة
+</footer><script>
+  function sendWhatsApp(event, productName){
+    event.preventDefault();
+
+    const form = event.target;
+
+    const name = form.querySelector('input[type="text"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const address = form.querySelector('textarea').value;
+    const color = form.querySelectorAll('select')[0].value;
+    const size = form.querySelectorAll('select')[1].value;
+
+    const message = `🛍️ طلب جديد من متجر SPOR MOVAN\n\n📦 المنتج: ${productName}\n🎨 اللون: ${color}\n📏 المقاس: ${size}\n👤 الاسم: ${name}\n📱 الهاتف: ${phone}\n📍 العنوان: ${address}`;
+
+    const whatsappURL = `https://wa.me/212648460893?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, '_blank');
+  }
+</script></body>
+</html>
